@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* テキストを隠す */
+@mixin rm-text {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+
+/* Clear the float:float要素の親に指定 */
+@mixin clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\0020";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
